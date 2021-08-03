@@ -14,6 +14,7 @@ body,input{
     min-height: 100vh;
     background-color: #fff;
     overflow: hidden;
+    z-index: 6;
 }
 .container:before{
     content: '';
@@ -41,6 +42,7 @@ body,input{
     width: 50%;
     display: grid;
     grid-template-columns: 1fr;
+    z-index: 5;
 }
 
 form{
@@ -149,7 +151,7 @@ form{
     left: 0;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    background: green; 
+     /*background: green; */
 }
 .panel{
     display: flex;
@@ -157,16 +159,41 @@ form{
     align-items: flex-end;
     justify-content: space-around;
     text-align: center;
+    z-index: 7;
 }
 .left-panel{
-padding: 3rem 17% 2rem 12%;
+    pointer-events: all;
+    padding: 3rem 17% 2rem 12%;
 }
 .right-panel{
+    pointer-events: none;
     padding: 3rem 12% 2rem 17%;
 }
 .panel .content{
     color: #fff;
 }
+.panel h3{
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1.rem;
+}
+.panel p{
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
+}
+
+.btn .transparent{
+    margin: 0;
+    background: none;
+    border: 2px solid #fff;
+    width: 130px;
+    height: 41px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
 .image{
     width: 100%;
+}
+.right-panel .content, .right-panel .image{
+    transform: translateX(800px);
 }
